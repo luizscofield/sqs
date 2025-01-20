@@ -11,7 +11,7 @@ MESSAGE = {
 def publish_message(queue_url, message_body, message_attributes={}):
     try:
         response = sqs.send_message(
-            QueueUrl=queue_url,
+            QueueUrl=QUEUE_URL,
             MessageBody=json.dumps(MESSAGE),
             MessageAttributes=message_attributes
         )
