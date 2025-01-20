@@ -12,8 +12,8 @@ def publish_message(queue_url, message_body, message_attributes={}):
     try:
         response = sqs.send_message(
             QueueUrl=queue_url,
-            MessageBody=json.dumps(message_body),
-            MessageAttributes=message_attributes or {}
+            MessageBody=json.dumps(MESSAGE),
+            MessageAttributes=message_attributes
         )
         print(f"Sucesso! ID: {response['MessageId']}")
     except Exception as e:
