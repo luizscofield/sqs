@@ -16,6 +16,8 @@ resource "aws_instance" "sqs-testing" {
     aws_security_group.allow_ssh.id
   ]
 
+  user_data = file("${path.module}/scripts/user_data.sh")
+
   tags = {
     Name = "sqs-testing"
   }
